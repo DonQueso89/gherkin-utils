@@ -1,0 +1,30 @@
+[
+    {
+        "airport_id": "Amsterdizzam",
+        "landing_area_id": "Amsterdizzam-1",
+        "operation_id": "operasjannn",
+        "eta_datetime": "2020-01-01T12:00:00",
+        "user_id": "1234"
+    },
+    {
+        "airport_id": "Amsterdizzam",
+        "landing_area_id": "Amsterdizzam-1",
+        "operation_id": "operasjannn",
+        "eta_datetime": "2020-01-01T12:00:00",
+        "user_id": "1234"
+    },
+    {
+        "airport_id": "Amsterdizzam",
+        "landing_area_id": "Amsterdizzam-1",
+        "operation_id": "operasjannn",
+        "eta_datetime": "2020-01-01T12:00:00",
+        "user_id": "1234"
+    },
+    {
+        "airport_id": "Amsterdizzam",
+        "landing_area_id": "Amsterdizzam-1",
+        "operation_id": "operasjannn",
+        "eta_datetime": "2020-01-01T12:00:00",
+        "user_id": "1234"
+    }
+]
