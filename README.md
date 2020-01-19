@@ -20,7 +20,7 @@ the structure and API of the data they are operating on.
 
 ### Roadmap
 
-- [ ] Given a feature file with one or more ScenarioOutlines, output a column header
+- [x] Given a feature file with one or more ScenarioOutlines, output a column header
       that can be pasted into a Gherkin file as Examples table for each ScenarioOutline.
       Each header must be mappable to its ScenarioOutline
 - [ ] Same as the previous feature, but include records from a datafile in any
