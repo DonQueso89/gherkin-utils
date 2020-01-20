@@ -1,7 +1,8 @@
 import re
+import json
 from gherkin.parser import Parser
 from gherkin.token_scanner import TokenScanner
-from typing import Set, TextIO, List
+from typing import Set, TextIO, List, Tuple
 from tabulate import tabulate
 
 
@@ -43,13 +44,15 @@ def placeholders_from_scenario_outline(scenario_outline: dict) -> Set[str]:
     return placeholders
 
 
-def columns_to_gherkin_table_header(columns: List[str]) -> str:
+def columns_to_gherkin_table(columns: List[str], table_data=None) -> str:
     """Convert a set of columns to a Gherkin table header
 
     Parameters
     ----------
     columns : List[str]
         the column names of the table
+    table_data : List[Tuple]
+        optional records to add to the table, in the order of the columns
 
     Returns
     -------
@@ -57,6 +60,9 @@ def columns_to_gherkin_table_header(columns: List[str]) -> str:
         table representation that can be pasted into a Gherkin file
         the empty string if columns is empty
     """
+    if table_data is None:
+        table_data = []
     if columns:
-        return tabulate([], headers=columns, tablefmt="github").splitlines()[0]
+        table = tabulate(table_data, headers=columns, tablefmt="github").splitlines()
+        return "\n".join([table[0]] + table[2:])
     return ""
