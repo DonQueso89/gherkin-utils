@@ -45,3 +45,17 @@ def gherkin2json(path_to_feature_file: str):
     with open(path_to_feature_file) as fd:
         ast = transformations.ast_from_gherkin_file(fd)
         click.echo(json.dumps(ast))
+
+
+@click.command()
+@click.argument("datatable")
+def readable_datatable(datatable: str):
+    """Convert an AST datatable representation to a JSON list of objects
+    """
+    click.echo(
+        json.dumps(
+            transformations.list_from_ast_datatable(
+                json.loads(datatable)
+            )
+        )
+    )
