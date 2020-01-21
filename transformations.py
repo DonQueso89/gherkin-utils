@@ -44,6 +44,32 @@ def placeholders_from_scenario_outline(scenario_outline: dict) -> Set[str]:
     return placeholders
 
 
+def list_from_ast_datatable(ast_datatable: dict) -> List[dict]:
+    """Convert a gherkin AST DataTable representation to a list of dict
+
+    Parameters
+    ----------
+    ast_datatable : dict
+        representation of a DataTable outline as returned by
+        gherkin.parser.Parser.parse
+
+    Returns
+    -------
+    list representation of DataTable : List[dict]
+    """
+    result = []
+    payload = ast_datatable['rows'][::-1]  # copy and reverse
+    headers = [x['value'] for x in payload.pop()['cells']]
+    while payload:
+        result.append(dict(
+            zip(
+                headers,
+                [x['value'] for x in payload.pop()['cells']]
+            )
+        ))
+    return result
+
+
 def columns_to_gherkin_table(columns: List[str], table_data=None) -> str:
     """Convert a set of columns to a Gherkin table header
 

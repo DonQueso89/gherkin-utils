@@ -2,12 +2,15 @@ import pytest
 import transformations
 
 
-@pytest.mark.parametrize("_input,output", [
-    (["test1", "test2"], "| test1   | test2   |"),
-    (["test1"], "| test1   |"),
-    ([], ""),
-])
-def test_columns_to_gherkin_table_header(_input, output):
+@pytest.mark.parametrize(
+    "_input,output",
+    [
+        (["test1", "test2"], "| test1   | test2   |"),
+        (["test1"], "| test1   |"),
+        ([], ""),
+    ],
+)
+def columns_to_gherkin_table(_input, output):
     assert transformations.columns_to_gherkin_table_header(_input) == output
 
 
@@ -150,3 +153,87 @@ def test_ast_from_gherkin_file_one_feature_one_scenario_outline_with_placeholder
         },
         "comments": [],
     }
+
+
+def test_list_from_ast_datatable():
+    _input = {
+        "type": "DataTable",
+        "location": {"line": 6, "column": 13},
+        "rows": [
+            {
+                "type": "TableRow",
+                "location": {"line": 6, "column": 13},
+                "cells": [
+                    {
+                        "type": "TableCell",
+                        "location": {"line": 6, "column": 15},
+                        "value": "eta_datetime",
+                    },
+                    {
+                        "type": "TableCell",
+                        "location": {"line": 6, "column": 43},
+                        "value": "landing_area_id",
+                    },
+                    {
+                        "type": "TableCell",
+                        "location": {"line": 6, "column": 75},
+                        "value": "user_id",
+                    },
+                ],
+            },
+            {
+                "type": "TableRow",
+                "location": {"line": 9, "column": 13},
+                "cells": [
+                    {
+                        "type": "TableCell",
+                        "location": {"line": 9, "column": 15},
+                        "value": "2020-01-01T12:00:00+00:00",
+                    },
+                    {
+                        "type": "TableCell",
+                        "location": {"line": 9, "column": 43},
+                        "value": "L1",
+                    },
+                    {
+                        "type": "TableCell",
+                        "location": {"line": 9, "column": 75},
+                        "value": "1234",
+                    },
+                ],
+            },
+            {
+                "type": "TableRow",
+                "location": {"line": 10, "column": 13},
+                "cells": [
+                    {
+                        "type": "TableCell",
+                        "location": {"line": 10, "column": 15},
+                        "value": "2020-01-01T13:00:00+00:00",
+                    },
+                    {
+                        "type": "TableCell",
+                        "location": {"line": 10, "column": 43},
+                        "value": "G5",
+                    },
+                    {
+                        "type": "TableCell",
+                        "location": {"line": 10, "column": 75},
+                        "value": "1234",
+                    },
+                ],
+            },
+        ],
+    }
+    assert transformations.list_from_ast_datatable(_input) == [
+        {
+            "eta_datetime": "2020-01-01T12:00:00+00:00",
+            "landing_area_id": "L1",
+            "user_id": "1234",
+        },
+        {
+            "eta_datetime": "2020-01-01T13:00:00+00:00",
+            "landing_area_id": "G5",
+            "user_id": "1234",
+        }
+    ]

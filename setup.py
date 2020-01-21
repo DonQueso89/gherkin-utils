@@ -12,5 +12,6 @@ setup(
     entry_points='''
         [console_scripts]
         gherkin2table=cli:gherkin2table
+        gherkin2json=cli:gherkin2json
     ''',
 )

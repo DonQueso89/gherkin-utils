@@ -37,5 +37,11 @@ def gherkin2table(path_to_feature_file: str, path_to_datafile: str):
                 click.echo()
 
 
-if __name__ == '__main__':
-    gherkin2table()
+@click.command()
+@click.argument("path_to_feature_file")
+def gherkin2json(path_to_feature_file: str):
+    """Convert a complete gherkinfile to the JSON representation of its AST
+    """
+    with open(path_to_feature_file) as fd:
+        ast = transformations.ast_from_gherkin_file(fd)
+        click.echo(json.dumps(ast))
