@@ -1,5 +1,5 @@
 import pytest
-import transformations
+from src import transformations
 
 
 @pytest.mark.parametrize(

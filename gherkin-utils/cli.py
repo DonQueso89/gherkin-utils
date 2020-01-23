@@ -1,6 +1,8 @@
-import click
-import transformations
 import json
+
+import click
+
+from gherkin_utils import transformations
 
 
 @click.command()
@@ -10,7 +12,7 @@ import json
     help="Absolute path to JSON file with records to add to the table",
     default=None,
 )
-def gherkin2table(path_to_feature_file: str, path_to_datafile: str):
+def gherkin_to_table(path_to_feature_file: str, path_to_datafile: str):
     """Convert a 1 or more ScenarioOutlines from a feature file to gherkin tables
        that can be pasted into the Examples section of the ScenarioOutline
     """
@@ -39,7 +41,7 @@ def gherkin2table(path_to_feature_file: str, path_to_datafile: str):
 
 @click.command()
 @click.argument("path_to_feature_file")
-def gherkin2json(path_to_feature_file: str):
+def gherkin_to_json(path_to_feature_file: str):
     """Convert a complete gherkinfile to the JSON representation of its AST
     """
     with open(path_to_feature_file) as fd:
@@ -49,7 +51,7 @@ def gherkin2json(path_to_feature_file: str):
 
 @click.command()
 @click.argument("datatable")
-def readable_datatable(datatable: str):
+def ast_datatable_to_list(datatable: str):
     """Convert an AST datatable representation to a JSON list of objects
     """
     click.echo(

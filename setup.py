@@ -3,16 +3,24 @@ from setuptools import setup, find_packages
 setup(
     name='gherkin-utils',
     version='0.1',
-    packages=find_packages(),
+    packages=find_packages(exclude=['legacy', 'tests']),
+    # this requires a MANIFEST.in ( has no purpose now )
     include_package_data=True,
-    py_modules=['cli'],
+    # make setuptools aware of single file modules that are not part of an
+    # import package
+    py_modules=[],
+    # minimal dependencies in order to run the project
     install_requires=[
         'Click',
+        'tabulate',
+        'gherkin-official',
     ],
     entry_points='''
         [console_scripts]
-        gherkin2table=cli:gherkin2table
-        gherkin2json=cli:gherkin2json
-        readable_datatable=cli:readable_datatable
+        gherkin2table=src.cli:gherkin_to_table
+        gherkin2json=src.cli:gherkin_to_json
+        ast_datatable2list=src.cli:ast_datatable_to_list
     ''',
+    python_requires='>=3.5',  # typing
+    test_require=["behave"],
 )

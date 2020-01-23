@@ -1,8 +1,9 @@
-import re
 import json
+import re
+from typing import List, Set, TextIO, Tuple
+
 from gherkin.parser import Parser
 from gherkin.token_scanner import TokenScanner
-from typing import Set, TextIO, List, Tuple
 from tabulate import tabulate
 
 
