@@ -22,5 +22,5 @@ setup(
         ast_datatable2list=src.cli:ast_datatable_to_list
     ''',
     python_requires='>=3.5',  # typing
-    test_require=["behave"],
+    tests_require=["behave"],
 )
