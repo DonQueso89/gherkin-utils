@@ -1,5 +1,5 @@
 import pytest
-from src import transformations
+from gherkin_utils import transformations
 
 
 @pytest.mark.parametrize(
