@@ -17,9 +17,9 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        gherkin2table=src.cli:gherkin_to_table
-        gherkin2json=src.cli:gherkin_to_json
-        ast_datatable2list=src.cli:ast_datatable_to_list
+        gherkin2table=gherkin_utils.cli:gherkin_to_table
+        gherkin2json=gherkin_utils.cli:gherkin_to_json
+        ast_datatable2list=gherkin_utils.cli:ast_datatable_to_list
     ''',
     python_requires='>=3.5',  # typing
     tests_require=["behave"],
