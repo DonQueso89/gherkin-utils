@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='gherkin-utils',
     version='0.1',
-    packages=find_packages(exclude=['legacy', 'tests']),
+    packages=['gherkin_utils'],
     # this requires a MANIFEST.in ( has no purpose now )
     include_package_data=True,
     # make setuptools aware of single file modules that are not part of an
