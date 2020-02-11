@@ -2,10 +2,9 @@
 import argparse
 import sys
 
-import numpy as np
 import pandas as pd
 from behave_pandas import dataframe_to_table
-
+from collections import defaultdict
 parser = argparse.ArgumentParser(
     usage="""
 Convert parsed parameters from a feature file to a Gherkin table, optionally
