@@ -1,3 +1,6 @@
+[![DonQueso89](https://circleci.com/gh/DonQueso89/gherkin-utils.svg?style=svg)](https://circleci.com/gh/DonQueso89/gherkin-utils)
+
+
 # Gherkin-utils
 Utilities for working with Gherkin feature files and step implementation modules
 
