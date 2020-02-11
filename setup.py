@@ -1,4 +1,4 @@
-from setuptools import find_packages, setup
+from setuptools import setup
 
 setup(
     name="gherkin-utils",
@@ -10,7 +10,7 @@ setup(
     # import package
     py_modules=[],
     # minimal dependencies in order to run the project
-    install_requires=["Click", "tabulate", "gherkin-official",],
+    install_requires=["Click", "tabulate", "gherkin-official"],
     entry_points="""
         [console_scripts]
         gherkin2table=gherkin_utils.cli:gherkin_to_table
