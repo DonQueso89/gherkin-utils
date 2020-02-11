@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import sys
 import argparse
-import pandas as pd
-import numpy as np
-from behave_pandas import dataframe_to_table
+import sys
 
+import numpy as np
+import pandas as pd
+from behave_pandas import dataframe_to_table
 
 parser = argparse.ArgumentParser(usage="""
 Convert parsed parameters from a feature file to a Gherkin table, optionally

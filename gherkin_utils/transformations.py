@@ -59,15 +59,10 @@ def list_from_ast_datatable(ast_datatable: dict) -> List[dict]:
     list representation of DataTable : List[dict]
     """
     result = []
-    payload = ast_datatable['rows'][::-1]  # copy and reverse
-    headers = [x['value'] for x in payload.pop()['cells']]
+    payload = ast_datatable["rows"][::-1]  # copy and reverse
+    headers = [x["value"] for x in payload.pop()["cells"]]
     while payload:
-        result.append(dict(
-            zip(
-                headers,
-                [x['value'] for x in payload.pop()['cells']]
-            )
-        ))
+        result.append(dict(zip(headers, [x["value"] for x in payload.pop()["cells"]])))
     return result
 
 

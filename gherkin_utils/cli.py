@@ -31,10 +31,7 @@ def gherkin_to_table(path_to_feature_file: str, path_to_datafile: str):
                     data = [[row[h] for h in headers] for row in data]
 
                 click.echo(
-                    transformations.columns_to_gherkin_table(
-                        headers,
-                        table_data=data,
-                    )
+                    transformations.columns_to_gherkin_table(headers, table_data=data,)
                 )
                 click.echo()
 
@@ -55,9 +52,5 @@ def ast_datatable_to_list(datatable: str):
     """Convert an AST datatable representation to a JSON list of objects
     """
     click.echo(
-        json.dumps(
-            transformations.list_from_ast_datatable(
-                json.loads(datatable)
-            )
-        )
+        json.dumps(transformations.list_from_ast_datatable(json.loads(datatable)))
     )

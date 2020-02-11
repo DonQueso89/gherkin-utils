@@ -7,3 +7,4 @@ flake8==3.7.9
 pycodestyle==2.5.0
 mccabe==0.6.1
 hypothesis==5.1.5
+black==19.10b0
