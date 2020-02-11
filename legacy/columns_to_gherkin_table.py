@@ -6,7 +6,8 @@ import numpy as np
 import pandas as pd
 from behave_pandas import dataframe_to_table
 
-parser = argparse.ArgumentParser(usage="""
+parser = argparse.ArgumentParser(
+    usage="""
 Convert parsed parameters from a feature file to a Gherkin table, optionally
 adding some data to it from a json file.
 
@@ -24,7 +25,8 @@ Returns
 -------
     None
         result is written to stdout
-""")
+"""
+)
 
 
 parser.add_argument("datafile", type=str, default=None)

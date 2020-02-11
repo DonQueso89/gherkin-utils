@@ -236,5 +236,5 @@ def test_list_from_ast_datatable():
             "eta_datetime": "2020-01-01T13:00:00+00:00",
             "landing_area_id": "G5",
             "user_id": "1234",
-        }
+        },
     ]
