@@ -1,8 +1,6 @@
 name: Upload Python Package to testPyPI
 
-on:
-    release:
-        [published]
+on: [push]
 
 jobs:
   deploy:
@@ -22,6 +20,7 @@ jobs:
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.testpypi_api_token }}
+      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
       run: |
         python setup.py sdist bdist_wheel
         twine upload --repository-url https://test.pypi.org/legacy/ dist/*
