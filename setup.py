@@ -2,7 +2,6 @@ from setuptools import setup
 
 setup(
     name="gherkin-utils",
-    version="0.1",
     packages=["gherkin_utils"],
     # this requires a MANIFEST.in ( has no purpose now )
     include_package_data=True,
