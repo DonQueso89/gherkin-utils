@@ -25,3 +25,4 @@ jobs:
             flake8 --exclude=venv* --statistics
             isort -c
             pytest -v
+      # TODO: Create new version tag and Build/upload package to Testpypi
