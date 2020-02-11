@@ -19,4 +19,6 @@ setup(
     """,
     python_requires=">=3.5",  # typing
     tests_require=["behave"],
+    setup_requires=["setuptools_scm"],
+    use_scm_version=True,
 )
