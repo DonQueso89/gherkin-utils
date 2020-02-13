@@ -10,4 +10,4 @@ hypothesis==5.5.1
 black==19.10b0
 coverage==5.0.3
 pytest-cov==2.8.1
-pytest==5.3.3
+pytest==5.3.5
