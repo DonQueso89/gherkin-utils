@@ -15,7 +15,7 @@ packaging==20.3
 pandas==1.0.1
 parse==1.14.0
 parse-type==0.5.2
-parso==0.6.1
+parso==0.8.0
 pexpect==4.8.0
 pickleshare==0.7.5
 pluggy==0.13.1
