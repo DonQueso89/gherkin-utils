@@ -3,7 +3,7 @@ attrs==19.3.0
 backcall==0.1.0
 behave==1.2.6
 behave-pandas==0.4.0
-click==7.0.0
+click==8.0.0
 decorator==4.4.1
 entrypoints==0.3
 gherkin-official==4.1.3
