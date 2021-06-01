@@ -7,7 +7,7 @@ click==7.0.0
 decorator==4.4.1
 entrypoints==0.3
 gherkin-official==4.1.3
-importlib-metadata==1.4.0
+importlib-metadata==4.4.0
 jedi==0.15.2
 more-itertools==8.2.0
 numpy==1.18.1
